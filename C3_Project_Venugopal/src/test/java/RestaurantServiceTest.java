@@ -66,4 +66,34 @@ class RestaurantServiceTest {
         assertEquals(initialNumberOfRestaurants + 1,service.getRestaurants().size());
     }
     //<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void calculate_final_order_value_pass() {
+        addFoodItemsToCart();
+
+        assertEquals(1215, orderValue.totalOrderValue());
+    }
+
+    @Test
+    public void calculate_final_order_value_fail() {
+        addFoodItemsToCart();
+
+        assertNotEquals(100, orderValue.totalOrderValue());
+    }
+
+    private void addFoodItemsToCart() {
+        Item Roti = new Item("Roti", 25);
+        orderValue.addFoodItemsToCart(Roti,10);
+
+        Item Rice = new Item("Rice", 110);
+        orderValue.addFoodItemsToCart(Rice, 1);
+
+        Item Paneer = new Item("Paneer", 250);
+        orderValue.addFoodItemsToCart(Paneer, 2);
+
+        Item Tadka = new Item("Tadka", 180);
+        orderValue.addFoodItemsToCart(Tadka, 1);
+
+        Item Malai = new Item("Malai", 35);
+        orderValue.addFoodItemsToCart(Malai, 5);
+    }
 }

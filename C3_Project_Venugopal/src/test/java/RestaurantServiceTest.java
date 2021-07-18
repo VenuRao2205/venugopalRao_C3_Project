@@ -26,7 +26,7 @@ class RestaurantServiceTest {
         //WRITE UNIT TEST CASE HERE
         mockData();
         List<Restaurant> getRestaurants = service.getRestaurants();
-        Restaurant getRestaurant = service.findRestaurantByName("Amelie's cafe");
+        Restaurant getRestaurant = service.findRestaurantByName("Venu's cafe");
         assertEquals(getRestaurants.get(0),getRestaurant);
     }
 
